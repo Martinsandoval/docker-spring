@@ -1,4 +1,5 @@
 FROM openjdk:8
-ADD target/docker-spring.jar docker-spring.jar
+ADD target/docker-spring.jar /app/docker-spring.jar
 EXPOSE 8085
-ENTRYPOINT ["java", "-jar", "docker-spring.jar"]
+WORKDIR /app
+CMD ["java", "-jar", "docker-spring.jar"]
